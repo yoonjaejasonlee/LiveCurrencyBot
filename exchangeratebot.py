@@ -1,8 +1,11 @@
 import requests
 import discord
+from discord.ext import commands
+
 intents = discord.Intents.default()
-intents.messages_content = True
-client = discord.Client(intents=intents)
+#client = discord.Client(intents=intents)
+
+client = commands.Bot(command_prefix='!', intents=intents)
 
 bot_token = "MTAwNjQzODE3MzYwMzI2NjYyMA.GA6BqK.K9-E1cLwVMAzYdPyYrzOCzlvXpIxfDv9k4Cg84"
 api_url = "https://quotation-api-cdn.dunamu.com/v1/forex/recent?codes=FRX.KRWUSD"
@@ -29,14 +32,10 @@ async def on_ready():
     await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="Currency Charts"))
 
 
-@client.event
+@client.command(name='달러환율')
 async def on_message(message):
-    if message.author.bot:
-        return None
-    channel = message.channel
+    await message.send(f"기준 시간: {time}\n{currency}\n현재가: {price}원\n전일가: {opening}원\n변동률: {round(changes, 2)}%") 
 
-    if message.content.startswith('!달러환율'):
-        await message.channel.send(f"기준 시간: {time}\n{currency}\n현재가: {price}원\n전일가: {opening}원\n변동률: {round(changes, 2)}%")
 
 
 client.run(bot_token)
