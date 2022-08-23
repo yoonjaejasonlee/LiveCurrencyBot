@@ -3,11 +3,7 @@ import discord
 
 client = discord.Client()
 
-<<<<<<< HEAD
-bot_token = "MTAwNjQzODE3MzYwMzI2NjYyMA.G8G8sR.dwKD5aG0dzEP51bu9DgZC3DE25F2_hsNd2L4n0"
-=======
-bot_token = "YOUR_TOKEN_HERE"
->>>>>>> f58a1a148c0f3d7d8fb32847a067fff81117f0cd
+bot_token = "MTAwNjQzODE3MzYwMzI2NjYyMA.GA6BqK.K9-E1cLwVMAzYdPyYrzOCzlvXpIxfDv9k4Cg84"
 api_url = "https://quotation-api-cdn.dunamu.com/v1/forex/recent?codes=FRX.KRWUSD"
 
 response = requests.get(api_url)
