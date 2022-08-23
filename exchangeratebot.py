@@ -4,11 +4,10 @@ from discord.ext import commands
 
 intents = discord.Intents.default()
 intents.message_content = True
-#client = discord.Client(intents=intents)
 
 client = commands.Bot(command_prefix='!', intents=intents)
 
-bot_token = "MTAwNjQzODE3MzYwMzI2NjYyMA.GA6BqK.K9-E1cLwVMAzYdPyYrzOCzlvXpIxfDv9k4Cg84"
+bot_token = "Your Token Here"
 api_url = "https://quotation-api-cdn.dunamu.com/v1/forex/recent?codes=FRX.KRWUSD"
 
 response = requests.get(api_url)
