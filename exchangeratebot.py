@@ -1,6 +1,7 @@
 import requests
 import discord
 intents = discord.Intents.default()
+intents.messages_content = True
 client = discord.Client(intents=intents)
 
 bot_token = "MTAwNjQzODE3MzYwMzI2NjYyMA.GA6BqK.K9-E1cLwVMAzYdPyYrzOCzlvXpIxfDv9k4Cg84"
