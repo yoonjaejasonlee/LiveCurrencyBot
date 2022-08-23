@@ -1,7 +1,7 @@
 import requests
 import discord
-
-client = discord.Client()
+intents = discord.Intents.default()
+client = discord.Client(intents=intents)
 
 bot_token = "MTAwNjQzODE3MzYwMzI2NjYyMA.GA6BqK.K9-E1cLwVMAzYdPyYrzOCzlvXpIxfDv9k4Cg84"
 api_url = "https://quotation-api-cdn.dunamu.com/v1/forex/recent?codes=FRX.KRWUSD"
