@@ -37,7 +37,7 @@ async def on_message(message):
     await message.send(f"기준 시간: {time}\n{currency}\n현재가: {price}원\n전일가: {opening}원\n변동률: {round(changes, 2)}%") 
 
 @client.command(name='원달러')
-async def KRWUSD(ctx, amount=int):
+async def KRWUSD(ctx, dollars):
     api_url = "https://quotation-api-cdn.dunamu.com/v1/forex/recent?codes=FRX.KRWUSD"
     response = requests.get(api_url)
 
@@ -46,8 +46,8 @@ async def KRWUSD(ctx, amount=int):
     for j in data:
         price = j['basePrice']
     
-    krw = price * amount
-    await message.send(f"${amount}은 현재 환율로 {price}원 입니다.")
+    krw = price * dollars
+    await message.send(f"${dollar}은 현재 환율로 {price}원 입니다.")
 
 
 
