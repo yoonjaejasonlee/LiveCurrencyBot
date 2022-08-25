@@ -8,7 +8,7 @@ intents.message_content = True
 client = commands.Bot(command_prefix='!', intents=intents)
 
 bot_token = "MTAwNjQzODE3MzYwMzI2NjYyMA.GJM6XM.8pFw_1GcoQriZrfhFMEGYyl9UvmZoCr8VujGIU"
-api_url = "https://quotation-api-cdn.dunamu.com/v1/forex/recent?codes=FRX.KRWUSD"
+
 
 @client.event
 async def on_ready():
@@ -20,8 +20,9 @@ async def on_ready():
     await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="Currency Charts"))
 
 
-@client.command(name='달러환율')
+@client.command(name='달러환율') #달러 환율 리퀘스트 일시 Trigger
 async def on_message(message):
+    api_url = "https://quotation-api-cdn.dunamu.com/v1/forex/recent?codes=FRX.KRWUSD"
     response = requests.get(api_url)
 
     data = response.json()
@@ -34,6 +35,19 @@ async def on_message(message):
 
     changes = (price - opening) / opening * 100
     await message.send(f"기준 시간: {time}\n{currency}\n현재가: {price}원\n전일가: {opening}원\n변동률: {round(changes, 2)}%") 
+
+@client.command(name='원달러')
+async def KRWUSD(ctx, amount=int):
+    api_url = "https://quotation-api-cdn.dunamu.com/v1/forex/recent?codes=FRX.KRWUSD"
+    response = requests.get(api_url)
+
+    data = response.json()
+
+    for j in data:
+        price = j['basePrice']
+    
+    krw = price * amount
+    await message.send(f"${amount}은 현재 환율로 {price}원 입니다.")
 
 
 
