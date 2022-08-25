@@ -34,7 +34,15 @@ async def on_message(message):
         opening = j['openingPrice']
 
     changes = (price - opening) / opening * 100
-    await message.send(f"기준 시간: {time}\n{currency}\n현재가: {price}원\n전일가: {opening}원\n변동률: {round(changes, 2)}%")
+    embed = discord.Embed(title="달러 얼마니?", description=f"{currency}", color=0xA71313)  # Embed의 기본 틀(색상, 메인 제목, 설명)을 잡아줍니다
+    embed.add_field(name="기준 시간", value=f"{time}")
+    embed.add_field(name="현재가", value=f"{price}원")
+    embed.add_field(name="전일가", value=f"{opening}원")
+    embed.add_field(name="변동률", value=f"{round(changes, 2)}%")
+    embed.set_footer(text="made by yoonj#0492",icon_url="https://i.imgur.com/w5eJpnh.jpeg")  # 하단에 들어가는 조그마한 설명을 잡아줍니다
+
+    #await message.send(f"기준 시간: {time}\n{currency}\n현재가: {price}원\n전일가: {opening}원\n변동률: {round(changes, 2)}%")
+    await message.send(embed=embed)
 
 @client.command(name='유로환율')  # 유로 환율 리퀘스트 일시 Trigger
 async def on_message(message):
