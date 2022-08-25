@@ -77,7 +77,7 @@ async def KRWUSD(ctx, dollars):
 
     krw = int(price) * int(dollars)
     plus_duty = krw + (krw * 0.23)
-    embed = discord.Embed(description=f"${dollars}은 현재 환율로 {krw}원 입니다.", color=0xA71313)
+    embed = discord.Embed(title=f"${dollars}은 현재 환율로 {krw}원 입니다.", color=0xA71313)
     embed.add_field(name="예상 관부가세", value=f"{krw * 0.23}원")
     embed.add_field(name="예상 총가격", value=f"{plus_duty}원")
     embed.set_footer(text="show me the money by yoonj#0492", icon_url="https://spng.pngfind.com/pngs/s/31-317340_stack-of-money-png-pile-of-money-transparent.png")
@@ -95,7 +95,7 @@ async def KRWEUR(ctx, euros):
 
     krw = int(price) * int(euros)
     plus_duty = krw + (krw * 0.23)
-    embed = discord.Embed(description=f"€{euros}은 현재 환율로 {krw}원 입니다.", color=0xA71313)
+    embed = discord.Embed(title=f"€{euros}은 현재 환율로 {krw}원 입니다.", color=0xA71313)
     embed.add_field(name="예상 관부가세", value=f"{krw * 0.23}원")
     embed.add_field(name="예상 총가격", value=f"{plus_duty}원")
     embed.set_footer(text="show me the money by yoonj#0492", icon_url="https://spng.pngfind.com/pngs/s/31-317340_stack-of-money-png-pile-of-money-transparent.png")
