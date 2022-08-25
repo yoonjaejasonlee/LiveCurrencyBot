@@ -47,7 +47,7 @@ async def KRWUSD(ctx, dollars):
         price = j['basePrice']
     
     krw = int(price) * int(dollars)
-    await message.send(f"${dollar}은 현재 환율로 {krw}원 입니다.")
+    await ctx.send(f"${dollar}은 현재 환율로 {krw}원 입니다.")
 
 
 
