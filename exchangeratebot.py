@@ -7,7 +7,7 @@ intents.message_content = True
 
 client = commands.Bot(command_prefix='!', intents=intents)
 
-bot_token = "MTAwNjQzODE3MzYwMzI2NjYyMA.GJM6XM.8pFw_1GcoQriZrfhFMEGYyl9UvmZoCr8VujGIU"
+bot_token = "Your Token Here"
 
 
 @client.event
