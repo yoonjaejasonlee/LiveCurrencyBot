@@ -1,4 +1,4 @@
-# KRWtoUSDdiscordBot
+# LiveCurrencyBot
 
 ## A bot that brings Live Exchange Rate to discord. 
 Currently Uses Hannah Bank's Open API to scrape information,
