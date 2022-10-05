@@ -11,5 +11,7 @@ built to easily check the current price of KRW during the ongoing global economi
 - KRW -> USD Live Exchange Rate
 - KRW -> EUR Live Exchange Rate
 - KRW -> GBP Live Exchange Rate
-- Exchange Rates for Certain Values eg) n USD = n KRW , n EUR = n KRW 
+- Exchange Rates for specific amount
+
+eg) n USD = n KRW , n EUR = n KRW 
  
